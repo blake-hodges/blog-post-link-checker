@@ -29,7 +29,8 @@ if response.status_code == 200:
         links = soup.findAll('a')
     #loop through the links and print to the console
     for link in links:
+        #we only need the href attribute of the link
         href = link.get('href')
         print(href)
 else:
-    print("failed to retrieve the webpage")
+    print(f"Failed to retrieve the webpage. Status code: {response.status_code}")
